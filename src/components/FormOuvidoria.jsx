@@ -55,7 +55,7 @@ export default function FormularioOuvidoria() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-10 bg-gray-100 rounded-lg shadow-lg space-y-6">
+        <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-10 bg-gray-100 rounded-lg shadow-[0_0_30px_10px_rgba(0,0,0,0.15)] space-y-6">
             <h2 className="text-2xl font-bold text-gray-800">Envie sua manifestação</h2>
 
             {erro && <p className="text-red-500 text-sm font-medium">{erro}</p>}
