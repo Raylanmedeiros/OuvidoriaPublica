@@ -55,7 +55,7 @@ export default function FormularioOuvidoria() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-lg space-y-6">
+        <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-10 bg-gray-100 rounded-lg shadow-lg space-y-6">
             <h2 className="text-2xl font-bold text-gray-800">Envie sua manifestação</h2>
 
             {erro && <p className="text-red-500 text-sm font-medium">{erro}</p>}
@@ -141,7 +141,7 @@ export default function FormularioOuvidoria() {
             {/* Botão de Envio */}
             <button
                 type="submit"
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200"
+                className="w-full flex justify-center py-3 px-4 rounded-md shadow-sm  text-gray-700 focus:ring-blue-500"
             >
                 Enviar mensagem
             </button>
