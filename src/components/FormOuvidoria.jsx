@@ -48,12 +48,6 @@ export default function FormularioOuvidoria() {
         setErro("");
     };
 
-
-    const handleTelefoneChange = (e) => {
-        const valorFormatado = formatarTelefone(e.target.value);
-        setNumero(valorFormatado);
-    };
-
     return (
         <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-10 bg-gray-100 rounded-lg shadow-[0_0_30px_10px_rgba(0,0,0,0.15)] space-y-6">
             <h2 className="text-2xl font-bold text-gray-800">Envie sua manifestação</h2>
@@ -62,7 +56,7 @@ export default function FormularioOuvidoria() {
 
             <div className="space-y-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Tipo de mensagem *</label>
+                    <label className="block text-left text-sm font-medium text-gray-700 mb-1">Tipo de mensagem *</label>
                     <select
                         value={tipo}
                         onChange={(e) => setTipo(e.target.value)}
@@ -79,7 +73,7 @@ export default function FormularioOuvidoria() {
                 {!anonimo && (
                     <div className="space-y-4">
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Nome *</label>
+                            <label className="block text-left text-sm font-medium text-gray-700 mb-1">Nome *</label>
                             <input
                                 type="text"
                                 placeholder="Seu nome"
@@ -92,7 +86,7 @@ export default function FormularioOuvidoria() {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Número *</label>
+                            <label className="block text-left text-sm font-medium text-gray-700 mb-1">Número *</label>
                             <input
                                 type="tel"
                                 placeholder="(XX) XXXXX-XXXX"
@@ -101,7 +95,7 @@ export default function FormularioOuvidoria() {
                                     const apenasNumeros = e.target.value.replace(/\D/g, '');
                                     setNumero(apenasNumeros);
                                 }}
-                                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm"
                                 pattern="^\(\d{2}\) \d{5}-\d{4}$"
                                 title="Digite 11 números (DDD + número)"
                                 required
@@ -112,14 +106,14 @@ export default function FormularioOuvidoria() {
 
                 {/* Campo Mensagem */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Mensagem *</label>
+                    <label className="block text-left text-sm font-medium text-gray-700 mb-1">Mensagem *</label>
                     <textarea
                         value={mensagem}
                         onChange={(e) => setMensagem(e.target.value)}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                        rows={5}
-                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm "
+                        rows={2}
                         placeholder="Descreva sua mensagem aqui..."
+                        required
                     ></textarea>
                 </div>
 
@@ -138,10 +132,9 @@ export default function FormularioOuvidoria() {
                 </div>
             </div>
 
-            {/* Botão de Envio */}
             <button
                 type="submit"
-                className="w-full flex justify-center py-3 px-4 rounded-md shadow-sm  text-gray-700 focus:ring-blue-500"
+                className="w-full flex justify-center shadow-sm  bg-red-500 text-white"
             >
                 Enviar mensagem
             </button>
